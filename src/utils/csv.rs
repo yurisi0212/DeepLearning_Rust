@@ -16,8 +16,6 @@ pub fn read_csv_with_schema<P: AsRef<Path>+ std::fmt::Debug>(path: P) -> PolarRe
         Field::new("body_mass_g", DataType::Float64),
         Field::new("sex", DataType::Utf8),
     ]);
-    
-    println!("{:?}", path);
 
     let file = File::open(path).expect("Cannot open file.");
     CsvReader::new(file)
